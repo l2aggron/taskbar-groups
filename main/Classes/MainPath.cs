@@ -8,5 +8,7 @@ namespace client.Classes
     {
         public static String path;
         public static String exeString;
+        public static String processName;
+        public static String windowContainsText;
     }
 }

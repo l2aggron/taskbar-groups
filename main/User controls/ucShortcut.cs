@@ -19,6 +19,7 @@ namespace client.User_controls
         public ProgramShortcut Psc { get; set; }
         public frmMain MotherForm { get; set; }
         public Category ThisCategory { get; set; }
+
         public ucShortcut()
         {
             InitializeComponent();
@@ -28,27 +29,69 @@ namespace client.User_controls
         {
             this.Show();
             this.BringToFront();
-            this.BackColor = MotherForm.BackColor;
+            AppHandler a = new AppHandler(Psc.FilePath, Psc.Arguments, Psc.ProcessName, Psc.WindowContainsText);
+            if (a.IsAppRunning())
+            {
+                this.BackColor = Color.ForestGreen;
+            }
+            else
+            {
+                this.BackColor = MotherForm.BackColor;
+            }
+            
             picIcon.BackgroundImage = ThisCategory.loadImageCache(Psc); // Use the local icon cache for the file specified as the icon image
         }
 
         public void ucShortcut_Click(object sender, EventArgs e)
         {
+            frmMain.ActiveForm.WindowState = FormWindowState.Minimized;
+            //MessageBox.Show(Psc.FilePath);
             if (Psc.isWindowsApp)
             {
-                Process p = new Process() {StartInfo = new ProcessStartInfo() { UseShellExecute = true, FileName = $@"shell:appsFolder\{Psc.FilePath}" }};
+                Process p = new Process() 
+                {
+                    StartInfo = new ProcessStartInfo()
+                    { 
+                        UseShellExecute = true, FileName = $@"shell:appsFolder\{Psc.FilePath}" 
+                    } 
+                };
                 p.Start();
-            } else
+            }
+            else
             {
-                if(Path.GetExtension(Psc.FilePath).ToLower() == ".lnk" && Psc.FilePath == MainPath.exeString)
+                if (Path.GetExtension(Psc.FilePath).ToLower() == ".lnk" && Psc.FilePath == MainPath.exeString)
 
                 {
-                    MotherForm.OpenFile(Psc.Arguments, Psc.FilePath, MainPath.path);
-                } else
+                    if (Psc.ProcessName != "" && Psc.WindowContainsText != "")
+                    {
+                        AppHandler a = new AppHandler(Psc.FilePath, Psc.Arguments, Psc.ProcessName, Psc.WindowContainsText);
+                        a.ShowApp();
+                        a.HideTaskbarButton();
+                    }
+                    else
+                    {
+                        MotherForm.OpenFile(Psc.Arguments, Psc.FilePath, MainPath.path);
+                    }
+                }
+                else
                 {
-                    MotherForm.OpenFile(Psc.Arguments, Psc.FilePath, Psc.WorkingDirectory);
+                    if (Psc.ProcessName != "" && Psc.WindowContainsText != "")
+                    {
+                        AppHandler a = new AppHandler(Psc.FilePath, Psc.Arguments, Psc.ProcessName, Psc.WindowContainsText);
+                        a.ShowApp();
+                        a.HideTaskbarButton();
+                    }
+                    else
+                    {
+                        MotherForm.OpenFile(Psc.Arguments, Psc.FilePath, Psc.WorkingDirectory);
+                    }
                 }
             }
+            try
+            {
+                
+            }
+            catch { }
         }
 
         public void ucShortcut_MouseEnter(object sender, EventArgs e)
@@ -58,7 +101,15 @@ namespace client.User_controls
 
         public void ucShortcut_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = Color.Transparent;
+            AppHandler a = new AppHandler(Psc.FilePath, Psc.Arguments, Psc.ProcessName, Psc.WindowContainsText);
+            if (a.IsAppRunning())
+            {
+                this.BackColor = Color.ForestGreen;
+            }
+            else
+            {
+                this.BackColor = Color.Transparent;
+            }
         }
     }
 }

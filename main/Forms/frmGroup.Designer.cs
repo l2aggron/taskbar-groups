@@ -66,13 +66,22 @@
             this.cmdWidthDown = new System.Windows.Forms.Button();
             this.cmdWidthUp = new System.Windows.Forms.Button();
             this.pnlArguments = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cmdSelectDirectory = new System.Windows.Forms.Button();
+            this.lblUnderlinePath = new System.Windows.Forms.Label();
+            this.lblPath = new System.Windows.Forms.Label();
+            this.txtboxPath = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.pnlWorkingDirectory = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pnlArgumentTextbox = new System.Windows.Forms.TextBox();
+            this.txtboxWindowContainsText = new System.Windows.Forms.TextBox();
+            this.lblWindowContainsText = new System.Windows.Forms.Label();
+            this.lblUnderlineProcessName = new System.Windows.Forms.Label();
+            this.txtboxProcessName = new System.Windows.Forms.TextBox();
+            this.lblProcessName = new System.Windows.Forms.Label();
+            this.lblUnderlineArguments = new System.Windows.Forms.Label();
+            this.lblUnderlineWorkingDirectory = new System.Windows.Forms.Label();
+            this.cmdSelectDirectory = new System.Windows.Forms.Button();
+            this.lblWorkingDirectory1 = new System.Windows.Forms.Label();
+            this.txtboxWorkingDirectory = new System.Windows.Forms.TextBox();
+            this.lblArguments = new System.Windows.Forms.Label();
+            this.txtboxArguments = new System.Windows.Forms.TextBox();
             this.pnlGroupIcon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmdAddGroupIcon)).BeginInit();
             this.pnlAddShortcut.SuspendLayout();
@@ -511,7 +520,7 @@
             this.pnlEnd.Controls.Add(this.cmdDelete);
             this.pnlEnd.Controls.Add(this.cmdSave);
             this.pnlEnd.Controls.Add(this.cmdExit);
-            this.pnlEnd.Location = new System.Drawing.Point(52, 722);
+            this.pnlEnd.Location = new System.Drawing.Point(50, 722);
             this.pnlEnd.Name = "pnlEnd";
             this.pnlEnd.Size = new System.Drawing.Size(482, 44);
             this.pnlEnd.TabIndex = 47;
@@ -546,38 +555,148 @@
             // 
             // pnlArguments
             // 
-            this.pnlArguments.Controls.Add(this.label7);
-            this.pnlArguments.Controls.Add(this.label6);
-            this.pnlArguments.Controls.Add(this.cmdSelectDirectory);
+            this.pnlArguments.Controls.Add(this.lblUnderlinePath);
+            this.pnlArguments.Controls.Add(this.lblPath);
+            this.pnlArguments.Controls.Add(this.txtboxPath);
             this.pnlArguments.Controls.Add(this.label5);
-            this.pnlArguments.Controls.Add(this.pnlWorkingDirectory);
-            this.pnlArguments.Controls.Add(this.label3);
-            this.pnlArguments.Controls.Add(this.pnlArgumentTextbox);
-            this.pnlArguments.Location = new System.Drawing.Point(45, 547);
+            this.pnlArguments.Controls.Add(this.txtboxWindowContainsText);
+            this.pnlArguments.Controls.Add(this.lblWindowContainsText);
+            this.pnlArguments.Controls.Add(this.lblUnderlineProcessName);
+            this.pnlArguments.Controls.Add(this.txtboxProcessName);
+            this.pnlArguments.Controls.Add(this.lblProcessName);
+            this.pnlArguments.Controls.Add(this.lblUnderlineArguments);
+            this.pnlArguments.Controls.Add(this.lblUnderlineWorkingDirectory);
+            this.pnlArguments.Controls.Add(this.cmdSelectDirectory);
+            this.pnlArguments.Controls.Add(this.lblWorkingDirectory1);
+            this.pnlArguments.Controls.Add(this.txtboxWorkingDirectory);
+            this.pnlArguments.Controls.Add(this.lblArguments);
+            this.pnlArguments.Controls.Add(this.txtboxArguments);
+            this.pnlArguments.Location = new System.Drawing.Point(50, 432);
             this.pnlArguments.Name = "pnlArguments";
-            this.pnlArguments.Size = new System.Drawing.Size(482, 131);
+            this.pnlArguments.Size = new System.Drawing.Size(480, 240);
             this.pnlArguments.TabIndex = 48;
             this.pnlArguments.Visible = false;
             // 
-            // label7
+            // lblUnderlinePath
             // 
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.label7.Location = new System.Drawing.Point(26, 51);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(440, 1);
-            this.label7.TabIndex = 53;
+            this.lblUnderlinePath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblUnderlinePath.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnderlinePath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblUnderlinePath.Location = new System.Drawing.Point(10, 50);
+            this.lblUnderlinePath.Name = "lblUnderlinePath";
+            this.lblUnderlinePath.Size = new System.Drawing.Size(460, 1);
+            this.lblUnderlinePath.TabIndex = 62;
             // 
-            // label6
+            // lblPath
             // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
-            this.label6.Location = new System.Drawing.Point(26, 103);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(335, 1);
-            this.label6.TabIndex = 50;
+            this.lblPath.AutoSize = true;
+            this.lblPath.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblPath.ForeColor = System.Drawing.Color.White;
+            this.lblPath.Location = new System.Drawing.Point(10, 10);
+            this.lblPath.Name = "lblPath";
+            this.lblPath.Size = new System.Drawing.Size(40, 20);
+            this.lblPath.TabIndex = 61;
+            this.lblPath.Text = "Path:";
+            // 
+            // txtboxPath
+            // 
+            this.txtboxPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.txtboxPath.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtboxPath.Enabled = false;
+            this.txtboxPath.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtboxPath.ForeColor = System.Drawing.Color.White;
+            this.txtboxPath.Location = new System.Drawing.Point(10, 30);
+            this.txtboxPath.Name = "txtboxPath";
+            this.txtboxPath.Size = new System.Drawing.Size(460, 16);
+            this.txtboxPath.TabIndex = 60;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.label5.Location = new System.Drawing.Point(10, 230);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(460, 1);
+            this.label5.TabIndex = 59;
+            // 
+            // txtboxWindowContainsText
+            // 
+            this.txtboxWindowContainsText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.txtboxWindowContainsText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtboxWindowContainsText.Enabled = false;
+            this.txtboxWindowContainsText.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtboxWindowContainsText.ForeColor = System.Drawing.Color.White;
+            this.txtboxWindowContainsText.Location = new System.Drawing.Point(10, 210);
+            this.txtboxWindowContainsText.Name = "txtboxWindowContainsText";
+            this.txtboxWindowContainsText.Size = new System.Drawing.Size(460, 16);
+            this.txtboxWindowContainsText.TabIndex = 58;
+            this.txtboxWindowContainsText.TextChanged += new System.EventHandler(this.txtboxWindowContainsText_TextChanged);
+            // 
+            // lblWindowContainsText
+            // 
+            this.lblWindowContainsText.AutoSize = true;
+            this.lblWindowContainsText.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblWindowContainsText.ForeColor = System.Drawing.Color.White;
+            this.lblWindowContainsText.Location = new System.Drawing.Point(10, 190);
+            this.lblWindowContainsText.Name = "lblWindowContainsText";
+            this.lblWindowContainsText.Size = new System.Drawing.Size(161, 20);
+            this.lblWindowContainsText.TabIndex = 57;
+            this.lblWindowContainsText.Text = "Window Title Contains:";
+            // 
+            // lblUnderlineProcessName
+            // 
+            this.lblUnderlineProcessName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblUnderlineProcessName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnderlineProcessName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblUnderlineProcessName.Location = new System.Drawing.Point(11, 185);
+            this.lblUnderlineProcessName.Name = "lblUnderlineProcessName";
+            this.lblUnderlineProcessName.Size = new System.Drawing.Size(460, 1);
+            this.lblUnderlineProcessName.TabIndex = 56;
+            // 
+            // txtboxProcessName
+            // 
+            this.txtboxProcessName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.txtboxProcessName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtboxProcessName.Enabled = false;
+            this.txtboxProcessName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtboxProcessName.ForeColor = System.Drawing.Color.White;
+            this.txtboxProcessName.Location = new System.Drawing.Point(10, 165);
+            this.txtboxProcessName.Name = "txtboxProcessName";
+            this.txtboxProcessName.Size = new System.Drawing.Size(460, 16);
+            this.txtboxProcessName.TabIndex = 55;
+            this.txtboxProcessName.TextChanged += new System.EventHandler(this.txtboxProcessName_TextChanged_1);
+            // 
+            // lblProcessName
+            // 
+            this.lblProcessName.AutoSize = true;
+            this.lblProcessName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblProcessName.ForeColor = System.Drawing.Color.White;
+            this.lblProcessName.Location = new System.Drawing.Point(10, 145);
+            this.lblProcessName.Name = "lblProcessName";
+            this.lblProcessName.Size = new System.Drawing.Size(105, 20);
+            this.lblProcessName.TabIndex = 54;
+            this.lblProcessName.Text = "Process Name:";
+            // 
+            // lblUnderlineArguments
+            // 
+            this.lblUnderlineArguments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblUnderlineArguments.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnderlineArguments.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblUnderlineArguments.Location = new System.Drawing.Point(10, 95);
+            this.lblUnderlineArguments.Name = "lblUnderlineArguments";
+            this.lblUnderlineArguments.Size = new System.Drawing.Size(460, 1);
+            this.lblUnderlineArguments.TabIndex = 53;
+            // 
+            // lblUnderlineWorkingDirectory
+            // 
+            this.lblUnderlineWorkingDirectory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblUnderlineWorkingDirectory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnderlineWorkingDirectory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(143)))), ((int)(((byte)(143)))));
+            this.lblUnderlineWorkingDirectory.Location = new System.Drawing.Point(10, 140);
+            this.lblUnderlineWorkingDirectory.Name = "lblUnderlineWorkingDirectory";
+            this.lblUnderlineWorkingDirectory.Size = new System.Drawing.Size(350, 1);
+            this.lblUnderlineWorkingDirectory.TabIndex = 50;
             // 
             // cmdSelectDirectory
             // 
@@ -586,7 +705,7 @@
             this.cmdSelectDirectory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdSelectDirectory.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.cmdSelectDirectory.ForeColor = System.Drawing.Color.White;
-            this.cmdSelectDirectory.Location = new System.Drawing.Point(367, 79);
+            this.cmdSelectDirectory.Location = new System.Drawing.Point(375, 115);
             this.cmdSelectDirectory.Name = "cmdSelectDirectory";
             this.cmdSelectDirectory.Size = new System.Drawing.Size(97, 27);
             this.cmdSelectDirectory.TabIndex = 52;
@@ -594,54 +713,54 @@
             this.cmdSelectDirectory.UseVisualStyleBackColor = false;
             this.cmdSelectDirectory.Click += new System.EventHandler(this.cmdSelectDirectory_Click);
             // 
-            // label5
+            // lblWorkingDirectory1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(23, 63);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(132, 20);
-            this.label5.TabIndex = 51;
-            this.label5.Text = "Working Directory:";
+            this.lblWorkingDirectory1.AutoSize = true;
+            this.lblWorkingDirectory1.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblWorkingDirectory1.ForeColor = System.Drawing.Color.White;
+            this.lblWorkingDirectory1.Location = new System.Drawing.Point(10, 100);
+            this.lblWorkingDirectory1.Name = "lblWorkingDirectory1";
+            this.lblWorkingDirectory1.Size = new System.Drawing.Size(132, 20);
+            this.lblWorkingDirectory1.TabIndex = 51;
+            this.lblWorkingDirectory1.Text = "Working Directory:";
             // 
-            // pnlWorkingDirectory
+            // txtboxWorkingDirectory
             // 
-            this.pnlWorkingDirectory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.pnlWorkingDirectory.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pnlWorkingDirectory.Enabled = false;
-            this.pnlWorkingDirectory.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.pnlWorkingDirectory.ForeColor = System.Drawing.Color.White;
-            this.pnlWorkingDirectory.Location = new System.Drawing.Point(27, 85);
-            this.pnlWorkingDirectory.Name = "pnlWorkingDirectory";
-            this.pnlWorkingDirectory.Size = new System.Drawing.Size(330, 16);
-            this.pnlWorkingDirectory.TabIndex = 50;
-            this.pnlWorkingDirectory.TextChanged += new System.EventHandler(this.pnlWorkingDirectory_TextChanged);
+            this.txtboxWorkingDirectory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.txtboxWorkingDirectory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtboxWorkingDirectory.Enabled = false;
+            this.txtboxWorkingDirectory.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtboxWorkingDirectory.ForeColor = System.Drawing.Color.White;
+            this.txtboxWorkingDirectory.Location = new System.Drawing.Point(10, 120);
+            this.txtboxWorkingDirectory.Name = "txtboxWorkingDirectory";
+            this.txtboxWorkingDirectory.Size = new System.Drawing.Size(350, 16);
+            this.txtboxWorkingDirectory.TabIndex = 50;
+            this.txtboxWorkingDirectory.TextChanged += new System.EventHandler(this.pnlWorkingDirectory_TextChanged);
             // 
-            // label3
+            // lblArguments
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(23, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Arguments:";
+            this.lblArguments.AutoSize = true;
+            this.lblArguments.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblArguments.ForeColor = System.Drawing.Color.White;
+            this.lblArguments.Location = new System.Drawing.Point(10, 55);
+            this.lblArguments.Name = "lblArguments";
+            this.lblArguments.Size = new System.Drawing.Size(84, 20);
+            this.lblArguments.TabIndex = 1;
+            this.lblArguments.Text = "Arguments:";
             // 
-            // pnlArgumentTextbox
+            // txtboxArguments
             // 
-            this.pnlArgumentTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.pnlArgumentTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pnlArgumentTextbox.Enabled = false;
-            this.pnlArgumentTextbox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.pnlArgumentTextbox.ForeColor = System.Drawing.Color.White;
-            this.pnlArgumentTextbox.Location = new System.Drawing.Point(26, 33);
-            this.pnlArgumentTextbox.Name = "pnlArgumentTextbox";
-            this.pnlArgumentTextbox.Size = new System.Drawing.Size(425, 16);
-            this.pnlArgumentTextbox.TabIndex = 0;
-            this.pnlArgumentTextbox.TextChanged += new System.EventHandler(this.pnlArgumentTextbox_TextChanged);
-            this.pnlArgumentTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pnlArgumentTextbox_KeyDown);
+            this.txtboxArguments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.txtboxArguments.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtboxArguments.Enabled = false;
+            this.txtboxArguments.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtboxArguments.ForeColor = System.Drawing.Color.White;
+            this.txtboxArguments.Location = new System.Drawing.Point(10, 75);
+            this.txtboxArguments.Name = "txtboxArguments";
+            this.txtboxArguments.Size = new System.Drawing.Size(460, 16);
+            this.txtboxArguments.TabIndex = 0;
+            this.txtboxArguments.TextChanged += new System.EventHandler(this.pnlArgumentTextbox_TextChanged);
+            this.txtboxArguments.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pnlArgumentTextbox_KeyDown);
             // 
             // frmGroup
             // 
@@ -726,13 +845,22 @@
         private System.Windows.Forms.Button numOpacDown;
         private System.Windows.Forms.Button numOpacUp;
         private System.Windows.Forms.Panel pnlArguments;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox pnlArgumentTextbox;
+        private System.Windows.Forms.Label lblArguments;
+        private System.Windows.Forms.TextBox txtboxArguments;
         private System.Windows.Forms.CheckBox pnlAllowOpenAll;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox pnlWorkingDirectory;
+        private System.Windows.Forms.Label lblWorkingDirectory1;
+        private System.Windows.Forms.TextBox txtboxWorkingDirectory;
         private System.Windows.Forms.Button cmdSelectDirectory;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblUnderlineWorkingDirectory;
+        private System.Windows.Forms.Label lblUnderlineArguments;
+        private System.Windows.Forms.Label lblProcessName;
+        private System.Windows.Forms.Label lblWindowContainsText;
+        private System.Windows.Forms.Label lblUnderlineProcessName;
+        private System.Windows.Forms.TextBox txtboxProcessName;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtboxWindowContainsText;
+        private System.Windows.Forms.Label lblUnderlinePath;
+        private System.Windows.Forms.Label lblPath;
+        private System.Windows.Forms.TextBox txtboxPath;
     }
 }

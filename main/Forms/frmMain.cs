@@ -39,7 +39,7 @@ namespace client
         //
         public frmMain(string passedDirectory, int cursorPosX, int cursorPosY)
         {
-            InitializeComponent();
+            InitializeComponent(passedDirectory);
 
             System.Runtime.ProfileOptimization.StartProfile("frmMain.Profile");
             mouseClick = new Point(cursorPosX, cursorPosY); // Consstruct point p based on passed x y mouse values
@@ -362,7 +362,9 @@ namespace client
         private void frmMain_Deactivate(object sender, EventArgs e)
         {
             // closes program if user clicks outside form
-            this.Close();
+            //this.Close();
+            // minimise program if user clicks outside form
+            //this.WindowState = FormWindowState.Minimized;
         }
 
         // Keyboard shortcut handlers

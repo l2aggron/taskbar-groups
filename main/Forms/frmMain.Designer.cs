@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private void InitializeComponent(string passedDirectory)
         {
             this.SuspendLayout();
             // 
@@ -39,7 +39,7 @@
             this.DoubleBuffered = true;
             this.KeyPreview = true;
             this.Name = "frmMain";
-            this.Text = "Group";
+            this.Text = passedDirectory; //"Group";
             this.Deactivate += new System.EventHandler(this.frmMain_Deactivate);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);

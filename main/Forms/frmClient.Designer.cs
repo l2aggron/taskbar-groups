@@ -161,13 +161,13 @@
             this.label4.Text = "Have issues/bugs?";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // lblWorkingDirectory
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(22, 34);
-            this.label5.Name = "label5";
+            this.label5.Name = "lblWorkingDirectory";
             this.label5.Size = new System.Drawing.Size(243, 24);
             this.label5.TabIndex = 14;
             this.label5.Text = "Please report them to the Github";
@@ -184,13 +184,13 @@
             this.pnlHelp.TabIndex = 17;
             this.pnlHelp.Visible = false;
             // 
-            // label3
+            // lblArguments
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(26, 19);
-            this.label3.Name = "label3";
+            this.label3.Name = "lblArguments";
             this.label3.Size = new System.Drawing.Size(243, 26);
             this.label3.TabIndex = 17;
             this.label3.Text = "When the folder opens:";

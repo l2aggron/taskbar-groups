@@ -759,7 +759,7 @@ namespace client.Forms
         // Deselect selected program/shortcut
         public void resetSelection()
         {
-            pnlArgumentTextbox.Enabled = false;
+            txtboxArguments.Enabled = false;
             cmdSelectDirectory.Enabled = false;
             if (selectedShortcut != null)
             {
@@ -778,12 +778,18 @@ namespace client.Forms
             passedShortcut.ucSelected();
             passedShortcut.IsSelected = true;
 
-            pnlArgumentTextbox.Text = Category.ShortcutList[selectedShortcut.Position].Arguments;
-            pnlArgumentTextbox.Enabled = true;
+            txtboxArguments.Text = Category.ShortcutList[selectedShortcut.Position].Arguments;
+            txtboxArguments.Enabled = true;
 
-            pnlWorkingDirectory.Text = Category.ShortcutList[selectedShortcut.Position].WorkingDirectory;
-            pnlWorkingDirectory.Enabled = true;
+            txtboxWorkingDirectory.Text = Category.ShortcutList[selectedShortcut.Position].WorkingDirectory;
+            txtboxWorkingDirectory.Enabled = true;
             cmdSelectDirectory.Enabled = true;
+
+            txtboxProcessName.Text = Category.ShortcutList[selectedShortcut.Position].ProcessName;
+            txtboxProcessName.Enabled = true;
+
+            txtboxWindowContainsText.Text = Category.ShortcutList[selectedShortcut.Position].WindowContainsText;
+            txtboxWindowContainsText.Enabled = true;
 
             pnlColor.Visible = false;
             pnlArguments.Visible = true;
@@ -792,7 +798,7 @@ namespace client.Forms
         // Set the argument property to whatever the user set
         private void pnlArgumentTextbox_TextChanged(object sender, EventArgs e)
         {
-            Category.ShortcutList[selectedShortcut.Position].Arguments = pnlArgumentTextbox.Text;
+            Category.ShortcutList[selectedShortcut.Position].Arguments = txtboxArguments.Text;
         }
 
         // Clear textbox focus
@@ -830,9 +836,19 @@ namespace client.Forms
             }
         }
 
+        //private void pnlProcessName_TextChanged(object sender, EventArgs e)
+        //{
+        //    Category.ShortcutList[selectedShortcut.Position].ProcessName = pnlProcessName.Text;
+        //
+        //    if (!shortcutChanged.Contains(Category.ShortcutList[selectedShortcut.Position]))
+        //    {
+        //        shortcutChanged.Add(Category.ShortcutList[selectedShortcut.Position]);
+        //    }
+        //}
+
         private void pnlWorkingDirectory_TextChanged(object sender, EventArgs e)
         {
-            Category.ShortcutList[selectedShortcut.Position].WorkingDirectory = pnlWorkingDirectory.Text;
+            Category.ShortcutList[selectedShortcut.Position].WorkingDirectory = txtboxWorkingDirectory.Text;
 
             if (!shortcutChanged.Contains(Category.ShortcutList[selectedShortcut.Position]))
             {
@@ -862,6 +878,31 @@ namespace client.Forms
         private void frmGroup_MouseClick(object sender, MouseEventArgs e)
         {
             resetSelection();
+        }
+
+        private void txtboxProcessName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtboxWindowContainsText_TextChanged(object sender, EventArgs e)
+        {
+            Category.ShortcutList[selectedShortcut.Position].WindowContainsText = txtboxWindowContainsText.Text;
+
+            if (!shortcutChanged.Contains(Category.ShortcutList[selectedShortcut.Position]))
+            {
+                shortcutChanged.Add(Category.ShortcutList[selectedShortcut.Position]);
+            }
+        }
+
+        private void txtboxProcessName_TextChanged_1(object sender, EventArgs e)
+        {
+            Category.ShortcutList[selectedShortcut.Position].ProcessName = txtboxProcessName.Text;
+
+            if (!shortcutChanged.Contains(Category.ShortcutList[selectedShortcut.Position]))
+            {
+                shortcutChanged.Add(Category.ShortcutList[selectedShortcut.Position]);
+            }
         }
     }
 }

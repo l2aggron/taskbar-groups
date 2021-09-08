@@ -8,7 +8,8 @@
         public string name { get; set; } = "";
         public string Arguments = "";
         public string WorkingDirectory = MainPath.exeString;
- 
+        public string ProcessName = MainPath.processName;
+        public string WindowContainsText = MainPath.windowContainsText;
 
         public ProgramShortcut() // needed for XML serialization
         {
